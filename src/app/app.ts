@@ -138,7 +138,7 @@ export class App implements OnInit {
 
     codeReader.getVideoInputDevices()
       .then((videoInputDevices) => {
-        const selectedDeviceId = videoInputDevices[0].deviceId
+        const selectedDeviceId = videoInputDevices[videoInputDevices.length-1].deviceId
         this.decodeContinuously(codeReader, selectedDeviceId);
         console.log(`Started decode from camera with id ${selectedDeviceId}`)
       })
